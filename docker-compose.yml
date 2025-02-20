@@ -14,7 +14,41 @@ services:
     ports:
       - "5432:5432"
 
-# TODO добавить сервисы
+  server:
+    build: ./gatewayService
+    restart: on-failure
+    depends_on:
+      - ticket_msv
+      - flight_msv
+      - bonus_msv
+      - postgres
+    ports:
+      - "8080:8080"
+
+  ticket_msv:
+    build: ./ticketService
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8070:8070"
+
+  flight_msv:
+    build: ./flightService
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8060:8060"
+
+  bonus_msv:
+    build: ./bonusService
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8050:8050"
+
 
 volumes:
   db-data:

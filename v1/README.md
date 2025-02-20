@@ -168,7 +168,7 @@ X-User-Name: {{username}}
 Пользователю возвращается информация о бонусном счете и истории его изменения.
 
 ```http request
-GET http://localhost:8080/api/v1/privilege
+GET http://localhost:8080/api/v1/privilegeHistory
 X-User-Name: {{username}}
 ```
 
