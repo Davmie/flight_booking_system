@@ -4,7 +4,7 @@ WORKDIR /
 
 COPY . /app
 
-WORKDIR /app/bonusService
+WORKDIR /app
 
 RUN go mod tidy
 RUN go mod download
