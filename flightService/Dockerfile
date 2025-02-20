@@ -5,7 +5,7 @@ WORKDIR /
 COPY . /app
 
 
-WORKDIR /app
+WORKDIR /app/flightService
 
 RUN go mod tidy
 RUN go mod download

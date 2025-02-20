@@ -5,7 +5,7 @@ WORKDIR /
 COPY . /app
 
 
-WORKDIR /app
+WORKDIR /app/ticketService
 
 RUN go mod tidy
 RUN go mod download
