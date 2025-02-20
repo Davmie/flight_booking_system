@@ -7,8 +7,8 @@ COPY . /app
 
 WORKDIR /app
 
-RUN go mod download
 RUN go mod tidy
+RUN go mod download
 RUN go build cmd/main.go
 
 EXPOSE 8050
